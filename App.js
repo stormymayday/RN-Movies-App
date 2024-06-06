@@ -1,20 +1,21 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { COLORS } from "./src/constants";
+import TopTabsNavigator from "./src/navigation/TopTabsNavigator";
+import HomeNavigator from "./src/navigation/HomeNavigator";
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <Text>Open up App.js to start working on your app!</Text>
-            <StatusBar style="auto" />
-        </View>
+        <NavigationContainer>
+            <HomeNavigator />
+        </NavigationContainer>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.primary,
+        // backgroundColor: COLORS.primary,
         alignItems: "center",
         justifyContent: "center",
     },

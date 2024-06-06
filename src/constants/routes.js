@@ -1,6 +1,7 @@
 export default {
-    MOVIES_TAB: "Movies Tab",
-    SEARCH_TAB: "Search Tab",
-    TV_SHOWS_TAB: "TV Shows Tab",
+    HOME: "Home",
+    MOVIES_TAB: "Movies",
+    SEARCH_TAB: "Search Results",
+    TV_SHOWS_TAB: "TV Shows",
     MOVIE_DETAILS: "Movie Details",
 };
