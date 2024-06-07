@@ -1,10 +1,4 @@
-import {
-    View,
-    Text,
-    StyleSheet,
-    FlatList,
-    TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import ResultsDetail from "./ResultsDetail";
 
 const ResultsList = (props) => {
