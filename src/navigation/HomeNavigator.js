@@ -21,6 +21,9 @@ const HomeNavigator = () => {
             <Stack.Screen
                 name={ROUTES.MOVIE_DETAILS}
                 component={MovieDetailsScreen}
+                options={({ route }) => ({
+                    title: route.params.movieName,
+                })}
             />
         </Stack.Navigator>
     );
