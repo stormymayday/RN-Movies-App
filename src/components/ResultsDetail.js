@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet, Button } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { ROUTES } from "../constants";
 
 const ResultsDetail = (props) => {
@@ -13,12 +13,12 @@ const ResultsDetail = (props) => {
                     uri: `https://image.tmdb.org/t/p/w500${poster_path}`,
                 }}
             />
-            <View>
+            <View style={styles.detailsContainer}>
                 <Text style={styles.name}>{original_title}</Text>
-                <Text style={styles}>Popularity: {popularity}</Text>
-                <Text style={styles}>Release Date: {release_date}</Text>
-                <Button
-                    title="More details"
+                <Text>Popularity: {popularity}</Text>
+                <Text>Release Date: {release_date}</Text>
+                <TouchableOpacity
+                    style={styles.button}
                     onPress={() =>
                         navigation.navigate(ROUTES.MOVIE_DETAILS, {
                             result,
@@ -26,7 +26,9 @@ const ResultsDetail = (props) => {
                             id: id,
                         })
                     }
-                />
+                >
+                    <Text style={styles.buttonText}>More details</Text>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -34,15 +36,35 @@ const ResultsDetail = (props) => {
 
 const styles = StyleSheet.create({
     container: {
+        flexDirection: "row",
         marginLeft: 15,
+        marginBottom: 15,
+        alignItems: "center",
+        width: "85%",
     },
     image: {
-        width: 250,
+        width: "30%",
         height: 120,
         borderRadius: 5,
-        marginBottom: 5,
+        marginRight: 15,
+    },
+    detailsContainer: {
+        width: "70%",
     },
     name: {
+        fontWeight: "bold",
+        marginBottom: 5,
+    },
+    button: {
+        backgroundColor: "lightblue",
+        padding: 10,
+        borderRadius: 5,
+        marginTop: 10,
+        alignItems: "center",
+        width: "100%",
+    },
+    buttonText: {
+        color: "white",
         fontWeight: "bold",
     },
 });
